@@ -1,20 +1,14 @@
 <?php
-
-try{
-  define("host", "localhost");
-  define("db", "login");
-  define("username", "root");
-  define("password", "");
-  $conn = new PDO("mysql:host = ".host.";dbname = ".db.",username,password");
+try {
+  define("HOST", "localhost");
+  define("DB", "login");
+  define("USER", "root");
+  define("PASSWORD", "");
+  $conn = new PDO("mysql:host=".HOST.";dbname=".DB, USER, PASSWORD);
   //PDO error handling
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "<h2>connection successful</h2>";
-
+  
+} catch(PDOException $Exception) {
+  echo $Exception->getMessage();
 }
-catch(PDOException $Exeption){
-  $Exeption->getMessage();
-}
-
-
-
 ?>
