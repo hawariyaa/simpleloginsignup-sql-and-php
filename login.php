@@ -19,6 +19,7 @@ $userData = $check->fetch();
 // is specifically designed for securely comparing a user-provided password with the hashed password stored in a database or elsewhere.
 if ($userData && password_verify($password, $userData['password'])) {
     echo "login successful";
+    //here make sure to make the character or VARCHAR for password 255.
 } else {
     echo "user doesn't exist or incorrect password";
 }
